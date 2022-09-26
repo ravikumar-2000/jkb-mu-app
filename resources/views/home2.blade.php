@@ -36,7 +36,7 @@
                     <option value="MHT-CET" style="font-size:20px">CET Score</option>
                 </select><br> -->
 
-                <select name="select-branch" class="form-select appearance-none
+                <select name="select-branch" class="temp form-select appearance-none
                 block
                 w-full
                 px-3
@@ -65,8 +65,42 @@
                     <option value="Civil Engineering" style="font-size:20px;">Civil Engineering</option>
                     <option value="AI / ML Engineering" style="font-size:20px;">AI/ML Engineering</option>
                 </select>
-                <!-- <label for="score" class="label">Score</label>
-                <input type="text" name="score" class="input"><br> -->
+
+                <br/>
+
+                <select name="select-category" class="temp form-select appearance-none
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding bg-no-repeat
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                    <option selected style="font-size:20px">Select Category</option>
+                    <option value="GOPEN" style="font-size:20px;">GOPENS/GOEPNH</option>
+                    <option value="GSCS" style="font-size:20px;">GSCS</option>
+                    <option value="GSTS" style="font-size:20px;">GSTS</option>
+                    <option value="GVJS" style="font-size:20px;">GVJS</option>
+                    <option value="GNT1S" style="font-size:20px;">GNT1S</option>
+                    <option value="GNT2S" style="font-size:20px;">GNT2S</option>
+                    <option value="GNT3S" style="font-size:20px;">GNT3S</option>
+                    <option value="GOBCS" style="font-size:20px;">GOBCS</option>
+                    <option value="TFWS" style="font-size:20px;">TFWS</option>
+                    <option value="EWS" style="font-size:20px;">EWS</option>
+                    <option value="MI" style="font-size:20px;">MI</option>
+                </select>
+
+                <br/>
+
+                <label for="score" class="label" >Score</label>
+                <input type="text" name="score" class="input"><br>
                 <br>
                 <button id="btn">Submit</button>
             </form>
@@ -78,15 +112,16 @@
         <input type="submit" value="Download PDF">
     <form> -->
     <div class="recordContent">
-        <table class="table-auto">
+        <table class="table-fixed">
             <thead>
                 <tr>
+                    <th>Sr No.</th>
                     <th>Institute</th>
-                    <!-- <th>Course</th> -->
+                    <th>Course</th>
                     <th>Location</th>
-                    <th>GOPENS/GOPENH</th>
-                    <th>GSCS</th>
-                    <th>GSTS</th>
+                    <!-- <th>GOPENS/GOPENH</th> -->
+                    <th>Category Percentile</th>
+                    <!-- <th>GSTS</th>
                     <th>GVJS</th>
                     <th>GNT1S</th>
                     <th>GNT2S</th>
@@ -94,17 +129,18 @@
                     <th>GOBCS</th>
                     <th>TFWS</th>
                     <th>EWS</th>
-                    <th>MI</th>
+                    <th>MI</th> -->
                 </tr>
             </thead>
             <tbody>
                 @foreach($records as $record)
                 <tr>
+                    <td>{{$loop -> index + 1}}</td>
                     <td>{{ $record -> InstituteName }}</td>
-                    <!-- <td>{{ $record -> CourseName }}</td> -->
+                    <td>{{ $record -> CourseName }}</td>
                     <td>{{ $record -> Location }}</td>
-                    <td>{{ $record -> GOPEN ?? '-' }}</td>
-                    <td>{{ $record -> GSCS ?? '-' }}</td>
+                    <td>{{ $record -> Category ?? '-' }}</td>
+                    <!-- <td>{{ $record -> GSCS ?? '-' }}</td>
                     <td>{{ $record -> GSTS ?? '-' }}</td>
                     <td>{{ $record -> GVJS ?? '-' }}</td>
                     <td>{{ $record -> GNT1S ?? '-' }}</td>
@@ -113,7 +149,7 @@
                     <td>{{ $record -> GOBCS ?? '-' }}</td>
                     <td>{{ $record -> TFWS ?? '-' }}</td>
                     <td>{{ $record -> EWS ?? '-' }}</td>
-                    <td>{{ $record -> MI ?? '-' }}</td>
+                    <td>{{ $record -> MI ?? '-' }}</td> -->
                 </tr>
                 @endforeach
             </tbody>

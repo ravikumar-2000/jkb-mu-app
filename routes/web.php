@@ -47,15 +47,16 @@ Route::get('/records_ai', function (Request $request) {
 });
 
 Route::get('/records_mu', function (Request $request) {
-    // $score = $request->input('score');
-    // $exam_type = $request->input('select-exam');
+    $score = $request->input('score');
+    $category = $request->input('select-category');
     $branch_name = $request->input('select-branch');
-    // if($score && $branch_name) {
-    //     if($score > 100 or $score < 0) {
-    //         return redirect('/');
-    //     }
+    if($score && $branch_name) {
+        if($score > 100 or $score < 0) {
+            return redirect('/');
+        }
+    }
     return view('home2', [
-        'records' => Recordmu::where('CourseName', '=', $branch_name)->get(),
+        'records' => Recordmu::select('InstituteName', 'CourseName', 'Location', $category . ' AS Category')->where('CourseName', '=', $branch_name)->where($category, '<=', $score)->orderBy($category)->get(),
         'branches' => Branch::all(),
     ]);
 });

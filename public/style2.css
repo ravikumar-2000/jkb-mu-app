@@ -1,10 +1,11 @@
 body{
     text-align: center;
-    background-color: #151e46;
+    /* background-color: #151e46; */
     color: white;
     font-size: 35px;
     font-family: Montserrat sans-serif;
-    background-image: url("img.png");
+    background-image: url("./images/img2.png");
+    /* background-repeat: no-repeat; */
 }
 
 h1{
@@ -16,12 +17,15 @@ h1{
     text-align: center;
 }
 
+
 .label{
     font-size:24px;
+    
+    
 }
 
 .input{
-    border: 4px solid #ffed00;
+    border: 4px solid #151e46;
     border-radius: 4px;
     padding: 8px;
     margin-left: 10px;
@@ -32,23 +36,26 @@ h1{
 .choose{
     font-size: 10px;
 }
+
 #btn{
-    border: 2px solid #ffed00;
-    background-color: #ffed00;
+    border: 2px solid #151e46;
+    background-color: #FFFC00
+    ;
     color: #151e46;
     padding: 10px 30px;
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;
+    border-radius: 10px;
 }
 
 .btn:hover{
+    border: 2px solid #ffed00;
     background-color: #151e46;
     color: white;
     text-decoration: none;
 }
-
 #score{
     padding: 10px 20px;
     font-weight: bold;
@@ -57,11 +64,17 @@ h1{
 
 .choose{
     font-size: 10px;
-
 }
 
+.score1{
+    margin-right: 140px;
+    margin-top: 8px;
+    
+}
+
+
 section{
-    background-color: white;
+    background-color:#ffffff80;
     color: #151e46;
     max-width: 800px;
     margin-left: 220px;  
@@ -81,16 +94,39 @@ div{
     height: 15px;
 }
 
+select {
+    margin-bottom: 10px;
+}
+
+.temp{
+    height: 40px;
+    font-size: medium;
+    border:2px solid white;
+    border-radius: 10px ;
+}
+
+.h3{
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+}
+
 .recordContent  {
     margin-top: 50px;
+    /* margin-left: 10px; */
+    /* border: 5px solid #f00; */
 }
 
 th {
+    border: 5px solid #f00;
     font-size: large;
-    padding-left: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 td {
+    border: 2px solid white;
     font-size: medium;
-    padding: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
 }
