@@ -15,7 +15,7 @@
         <h3>Academic Cum Industrial Grooming</h3>
         <p>College Admission Exam Predictor</p>
     </div>
-    <form action="/records" method="GET">
+    <form action="/records_ai" method="GET">
         <div class="flex justify-center">
             <div class="mb-3 xl:w-96">
                 <select name='select-exam' class="form-select appearance-none
@@ -63,8 +63,8 @@
                 </div>
             </div>
         </div>
-        <label for="jee-score" class="label">Score</label>
-        <input type="text" name="jee-score" class="input"><br>
+        <label for="score" class="label">Score</label>
+        <input type="text" name="score" class="input"><br>
         <button id="btn">Submit</button>
     </form>
 
