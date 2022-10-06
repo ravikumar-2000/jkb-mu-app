@@ -31,7 +31,7 @@
                                 ease-in-out
                                 m-0
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                    <option selected style="font-size:20px" id="exam">Select Exam</option>
+                    <option selected style="font-size:20px" id="exam">Select Exam (JEE / MHT-CET)</option>
                     <option value="JEE" style="font-size:20px">JEE</option>
                     <option value="MHT-CET" style="font-size:20px">CET</option>
                 </select><br>
@@ -52,7 +52,7 @@
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
                     <option selected style="font-size:20px">Select Engineering Branch</option>
-                    <option value="Computer Engineering" style="font-size:20px;">Computer Science</option>
+                    <option value="Computer Science Engineering" style="font-size:20px;">Computer Science Engineering</option>
                     <option value="IT Engineering" style="font-size:20px;">Information Technology</option>
                     <option value="EXTC Engineering" style="font-size:20px;">Electronics and Telecommunication Engg</option>
                     <option value="Electrical Engineering" style="font-size:20px;">Electrical Engineering</option>
@@ -84,14 +84,14 @@
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
                     <option selected style="font-size:20px">Select Category</option>
-                    <option value="GOPEN" style="font-size:20px;">GOPENS/GOEPNH</option>
-                    <option value="GSCS" style="font-size:20px;">GSCS</option>
-                    <option value="GSTS" style="font-size:20px;">GSTS</option>
-                    <option value="GVJS" style="font-size:20px;">GVJS</option>
-                    <option value="GNT1S" style="font-size:20px;">GNT1S</option>
-                    <option value="GNT2S" style="font-size:20px;">GNT2S</option>
-                    <option value="GNT3S" style="font-size:20px;">GNT3S</option>
-                    <option value="GOBCS" style="font-size:20px;">GOBCS</option>
+                    <option value="GOPEN" style="font-size:20px;">GOPENS / GOEPNH</option>
+                    <option value="GSCS" style="font-size:20px;">GSCS / GSCH</option>
+                    <option value="GSTS" style="font-size:20px;">GSTS / GSTH</option>
+                    <option value="GVJS" style="font-size:20px;">GVJS / GVJH</option>
+                    <option value="GNT1S" style="font-size:20px;">GNT1S / GNT1H</option>
+                    <option value="GNT2S" style="font-size:20px;">GNT2S / GNT2H</option>
+                    <option value="GNT3S" style="font-size:20px;">GNT3S / GNT3H</option>
+                    <option value="GOBCS" style="font-size:20px;">GOBCS / GOBCH</option>
                     <option value="TFWS" style="font-size:20px;">TFWS</option>
                     <option value="EWS" style="font-size:20px;">EWS</option>
                     <option value="MI" style="font-size:20px;">MI</option>

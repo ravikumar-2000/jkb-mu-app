@@ -2,7 +2,7 @@
 
 use App\Models\Branch;
 use Illuminate\Support\Facades\Route;
-use App\Models\RecordMU;
+use App\Models\Recordmu;
 use App\Models\Record;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -52,7 +52,7 @@ Route::get('/records_mu', function (Request $request) {
     $exam_type = $request->input('select-exam');
     $category = $request->input('select-category');
     $branch_name = $request->input('select-branch');
-    
+
     if($exam_type == 'MHT-CET'){
         $records = Recordmu::select('InstituteName', 'CourseName', 'Location', $category . ' AS Category')->where('CourseName', '=', $branch_name)->where($category, '<=', $score)->latest($category)->get();
         $recordsAI = [];
