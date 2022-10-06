@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', function () {
     return view('home2', [
         'records' => [],
+        'recordsAI' => [],
         'branches' => Branch::all(),
     ]);
 });
@@ -48,15 +49,25 @@ Route::get('/records_ai', function (Request $request) {
 
 Route::get('/records_mu', function (Request $request) {
     $score = $request->input('score');
+    $exam_type = $request->input('select-exam');
     $category = $request->input('select-category');
     $branch_name = $request->input('select-branch');
+    
+    if($exam_type == 'MHT-CET'){
+        $records = Recordmu::select('InstituteName', 'CourseName', 'Location', $category . ' AS Category')->where('CourseName', '=', $branch_name)->where($category, '<=', $score)->latest($category)->get();
+        $recordsAI = [];
+    } else {
+        $recordsAI = Record::select('Institute', 'CourseName', 'Exam', 'Percentile')->where('CourseName', '=', $branch_name)->where('Percentile', '<=', $score)->where('Exam', '=', $exam_type)->latest('Percentile')->get();
+        $records = [];
+    }
     if($score && $branch_name) {
         if($score > 100 or $score < 0) {
             return redirect('/');
         }
     }
     return view('home2', [
-        'records' => Recordmu::select('InstituteName', 'CourseName', 'Location', $category . ' AS Category')->where('CourseName', '=', $branch_name)->where($category, '<=', $score)->orderBy($category)->get(),
+        'records' => $records,
+        'recordsAI' => $recordsAI,
         'branches' => Branch::all(),
     ]);
 });

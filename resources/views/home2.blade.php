@@ -16,7 +16,7 @@
             <h3>Academic Cum Industrial Grooming</h3>
             <p>Check which college you will get...</p>
             <form action="/records_mu" method="GET">
-                <!-- <select name='select-exam' class="form-select appearance-none
+                <select name='select-exam' class="temp form-select appearance-none
                                 block
                                 w-full
                                 px-6
@@ -32,9 +32,9 @@
                                 m-0
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
                     <option selected style="font-size:20px" id="exam">Select Exam</option>
-                    <option value="JEE" style="font-size:20px">JEE Score</option>
-                    <option value="MHT-CET" style="font-size:20px">CET Score</option>
-                </select><br> -->
+                    <option value="JEE" style="font-size:20px">JEE</option>
+                    <option value="MHT-CET" style="font-size:20px">CET</option>
+                </select><br>
 
                 <select name="select-branch" class="temp form-select appearance-none
                 block
@@ -52,7 +52,7 @@
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
                     <option selected style="font-size:20px">Select Engineering Branch</option>
-                    <option value="Computer Engineering" style="font-size:20px;">Computer Engineering</option>
+                    <option value="Computer Engineering" style="font-size:20px;">Computer Science</option>
                     <option value="IT Engineering" style="font-size:20px;">Information Technology</option>
                     <option value="EXTC Engineering" style="font-size:20px;">Electronics and Telecommunication Engg</option>
                     <option value="Electrical Engineering" style="font-size:20px;">Electrical Engineering</option>
@@ -99,8 +99,8 @@
 
                 <br/>
 
-                <label for="score" class="label" >Score</label>
-                <input type="text" name="score" class="input"><br>
+                <!-- <label for="score" class="label" >Score</label> -->
+                <input type="text" name="score" class="temp2 input" placeholder="Score"><br>
                 <br>
                 <button id="btn">Submit</button>
             </form>
@@ -150,6 +150,34 @@
                     <td>{{ $record -> TFWS ?? '-' }}</td>
                     <td>{{ $record -> EWS ?? '-' }}</td>
                     <td>{{ $record -> MI ?? '-' }}</td> -->
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    @endif
+
+    @if($recordsAI)
+    <div class="recordContent">
+        <table class="table-fixed">
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Institute</th>
+                    <th>CourseName</th>
+                    <th>Exam(JEE/MHT-CET)</th>
+                    <th>Percentile</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($recordsAI as $record)
+                <tr>
+                    <td>{{$loop -> index + 1}}</td>
+                    <td>{{ $record -> Institute }}</td>
+                    <td>{{ $record -> CourseName }}</td>
+                    <td>{{ $record -> Exam }}</td>
+                    <td>{{ $record -> Percentile ?? '-' }}</td>
                 </tr>
                 @endforeach
             </tbody>

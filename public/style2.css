@@ -4,6 +4,7 @@ body{
     color: white;
     font-size: 35px;
     font-family: Montserrat sans-serif;
+    background-attachment: fixed;
     background-image: url("./images/img2.png");
     /* background-repeat: no-repeat; */
 }
@@ -28,7 +29,7 @@ h1{
     border: 4px solid #151e46;
     border-radius: 4px;
     padding: 8px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     font-family: Montserrat sans-serif;
     font-size: 20px;
 }
@@ -103,6 +104,15 @@ select {
     font-size: medium;
     border:2px solid white;
     border-radius: 10px ;
+    width: 300px;
+}
+
+.temp2{
+    /* height: 40px; */
+    font-size: medium;
+    border:2px solid white;
+    border-radius: 10px ;
+    width: 280px;
 }
 
 .h3{
