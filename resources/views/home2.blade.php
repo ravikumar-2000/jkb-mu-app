@@ -11,8 +11,17 @@
         @endguest
 
         <div id="register">
-        <x-register>
-        </x-register>
+
+            @if (array_key_exists('d', $_GET))
+                <section>
+                    Thanks for registering. Team JKB will contact you shortly or Kindly connect us on <a href="tel:+919768455222">9768455222</a> | <a href="tel:+919768190255">9768190255</a>
+                </section>
+            @else
+                <x-register>
+                </x-register>
+            @endif
+
+
         </div>
 
 

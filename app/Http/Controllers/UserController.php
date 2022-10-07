@@ -25,7 +25,7 @@ class UserController extends Controller
 
         // auth() -> login($user);
         session() -> flash('success', 'Your Account has been Created!');
-        return redirect('/');
+        return redirect('/?d');
     }
 
     public function login(){
