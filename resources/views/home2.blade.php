@@ -1,19 +1,20 @@
 <x-layout>
 
     <div>
-        <h1>JKB Education Group & IT Services</h1>
+        <h1>JKB Education Group <span>& IT Services</span></h1>
         <iframe id="video" src="https://www.youtube.com/embed/MeBWQVu4GL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         @guest
         <br/>
         <button id="btn"><a href='#register'>Predict My College</a></button>
+            <div class="tag-line">Engineering College Predictor in CAP Rounds based on CET/JEE Score by Vinayak Sir - JKB Education Group</div>
         @endguest
 
         <div id="register">
         <x-register>
         </x-register>
         </div>
-        
+
 
         @auth
         <h4>Welcome {{ auth() -> user() -> name }}</h4>
