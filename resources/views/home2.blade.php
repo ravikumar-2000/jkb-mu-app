@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JKB Education Group</title>
-    <link rel="stylesheet" href="./style2.css">
-</head>
-
-<body>
     <div>
         <h1>JKB Education Group & IT Services</h1>
+        <iframe id="video" src="https://www.youtube.com/embed/MeBWQVu4GL8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        @guest
+        <br/>
+        <button id="btn"><a href='#register'>Predict My College</a></button>
+        @endguest
+
+        <div id="register">
+        <x-register>
+        </x-register>
+        </div>
+        
+
+        @auth
+        <h4>Welcome {{ auth() -> user() -> name }}</h4>
         <section>
             <h3>Academic Cum Industrial Grooming</h3>
             <p>Check which college you will get...</p>
@@ -66,7 +71,7 @@
                     <option value="AI / ML Engineering" style="font-size:20px;">AI/ML Engineering</option>
                 </select>
 
-                <br/>
+                <br />
 
                 <select name="select-category" class="temp form-select appearance-none
                 block
@@ -97,14 +102,17 @@
                     <option value="MI" style="font-size:20px;">MI</option>
                 </select>
 
-                <br/>
+                <br />
 
                 <!-- <label for="score" class="label" >Score</label> -->
                 <input type="text" name="score" class="temp2 input" placeholder="Score"><br>
                 <br>
+                @auth
                 <button id="btn">Submit</button>
+                @endauth
             </form>
         </section>
+        @endauth
     </div>
 
     @if($records)
@@ -119,17 +127,7 @@
                     <th>Institute</th>
                     <th>Course</th>
                     <th>Location</th>
-                    <!-- <th>GOPENS/GOPENH</th> -->
                     <th>Category Percentile</th>
-                    <!-- <th>GSTS</th>
-                    <th>GVJS</th>
-                    <th>GNT1S</th>
-                    <th>GNT2S</th>
-                    <th>GNT3S</th>
-                    <th>GOBCS</th>
-                    <th>TFWS</th>
-                    <th>EWS</th>
-                    <th>MI</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -140,16 +138,6 @@
                     <td>{{ $record -> CourseName }}</td>
                     <td>{{ $record -> Location }}</td>
                     <td>{{ $record -> Category ?? '-' }}</td>
-                    <!-- <td>{{ $record -> GSCS ?? '-' }}</td>
-                    <td>{{ $record -> GSTS ?? '-' }}</td>
-                    <td>{{ $record -> GVJS ?? '-' }}</td>
-                    <td>{{ $record -> GNT1S ?? '-' }}</td>
-                    <td>{{ $record -> GNT2S ?? '-' }}</td>
-                    <td>{{ $record -> GNT3S ?? '-' }}</td>
-                    <td>{{ $record -> GOBCS ?? '-' }}</td>
-                    <td>{{ $record -> TFWS ?? '-' }}</td>
-                    <td>{{ $record -> EWS ?? '-' }}</td>
-                    <td>{{ $record -> MI ?? '-' }}</td> -->
                 </tr>
                 @endforeach
             </tbody>
@@ -185,7 +173,4 @@
     </div>
 
     @endif
-
-</body>
-
-</html>
+</x-layout>

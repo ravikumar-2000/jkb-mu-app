@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SessionController;
 use App\Models\Branch;
 use Illuminate\Support\Facades\Route;
 use App\Models\Recordmu;
@@ -26,6 +28,14 @@ Route::get('/', function () {
         'branches' => Branch::all(),
     ]);
 });
+
+
+Route::get('register', [UserController::class, 'create']);
+Route::post('register', [UserController::class, 'store']);
+
+Route::get('login', [SessionController::class, 'create']);
+Route::post('login', [SessionController::class, 'store']);
+
 
 Route::get('/records_ai', function (Request $request) {
     $score = $request->input('score');

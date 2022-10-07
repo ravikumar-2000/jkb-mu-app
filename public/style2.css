@@ -18,12 +18,19 @@ h1{
     text-align: center;
 }
 
+h4, h2, a {
+    color: black;
+    text-decoration: none;
+}
+
 
 .label{
     font-size:24px;
     
     
 }
+
+
 
 .input{
     border: 4px solid #151e46;
@@ -78,7 +85,7 @@ section{
     background-color:#ffffff80;
     color: #151e46;
     max-width: 800px;
-    margin-left: 220px;  
+    /* margin-left: 220px;   */
     padding: 20px;
     box-shadow:0px 0px 0px 0px lightgrey;
     border-radius: 30px;
@@ -87,7 +94,7 @@ section{
 
 div{
     max-width: 80%;
-    margin-left: 150px;
+    margin: 0 auto;
 }
 
 .exam{
@@ -105,6 +112,16 @@ select {
     border:2px solid white;
     border-radius: 10px ;
     width: 300px;
+}
+
+.temp3{
+    height: 60px;
+    font-size: medium;
+    border:2px solid white;
+    border-radius: 10px ;
+    border: 2px solid black;
+    width: 500px;
+    margin-bottom: 10px;
 }
 
 .temp2{
@@ -139,4 +156,68 @@ td {
     font-size: medium;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+#video {
+    width: 900px;
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .table-fixed {
+        width: 100%;
+    }
+
+    .recordContent {
+        overflow-x: auto;
+    }
+
+    #video {
+        width: 100%;
+        height: 300px;
+    }
+
+    div {
+        max-width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .temp3 {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+
+    div{
+        max-width: 80%;
+        margin-left: 150px;
+    }
+
+    /* section {
+        margin-left: 220px;
+    } */
+
+}
+
+#register {
+    margin-top: 50px;
 }
