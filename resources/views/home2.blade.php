@@ -17,8 +17,10 @@
                     Thanks for registering. Team JKB will contact you shortly or Kindly connect us on <a href="tel:+919768455222">9768455222</a> | <a href="tel:+919768190255">9768190255</a>
                 </section>
             @else
+                @guest
                 <x-register>
                 </x-register>
+                @endguest
             @endif
 
 
@@ -79,6 +81,7 @@
                     <option value="Biomedical Engineering" style="font-size:20px;">Biomedical Engineering</option>
                     <option value="Civil Engineering" style="font-size:20px;">Civil Engineering</option>
                     <option value="AI / ML Engineering" style="font-size:20px;">AI/ML Engineering</option>
+                    <option value="Data Science Engineering" style="font-size:20px;">Data Science Engineering</option>
                 </select>
 
                 <br />
