@@ -26,9 +26,11 @@
 
         </div>
 
-
         @auth
         <h4>Welcome {{ auth() -> user() -> name }}</h4>
+        @if(auth()->user()->email === 'jkbclasses@gmail.com' && auth()->user()->name === 'jkbitservices')
+            <h5><a href="/show-my-future">Show Student's Data</a></h5>
+        @endif
         <section>
             <h3>Academic Cum Industrial Grooming</h3>
             <p>Check which college you will get...</p>

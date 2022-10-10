@@ -36,6 +36,8 @@ Route::post('register', [UserController::class, 'store']);
 Route::get('login', [SessionController::class, 'create']);
 Route::post('login', [SessionController::class, 'store']);
 
+Route::get('/show-my-future', [UserController::class, 'showUsers']);
+
 
 Route::get('/records_ai', function (Request $request) {
     $score = $request->input('score');
